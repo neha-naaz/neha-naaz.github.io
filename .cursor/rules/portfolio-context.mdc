@@ -1,0 +1,39 @@
+---
+description: Context, decisions and conventions for Neha's personal portfolio site
+alwaysApply: true
+---
+
+# Portfolio: project context
+
+Personal portfolio for **Neha Naazneen**, a Java/Spring Boot backend engineer at AutoRABIT (CodeScan), Hyderabad.
+Resume: `public/resume.pdf` (source of truth for all content).
+
+## Goals
+- Unique, not a copy of popular/forked GitHub portfolios. Nice but not complex.
+- Easy to extend: she will keep adding side projects and product clones.
+- Interview-friendly: she may be asked to add a feature live, so keep the code simple, idiomatic React/Next, and easy to explain.
+
+## Stack
+Next.js (App Router, check `node_modules/next/dist/docs/` since this version differs from older Next), TypeScript, Tailwind v4. Fully static, no backend. Next dev: `npm run dev`.
+
+## Design concept
+- Warm "paper" palette + serif display font (Fraunces), orange accent, light/dark via `data-theme` and CSS variables in `src/app/globals.css`.
+- Experience is shown as a **changelog / release notes** (`releases` in `src/content/site.ts`, tags: shipped / improved / fixed).
+- Skills are rendered as a **package.json** block (`About.tsx`).
+- **⌘K command palette** (`CommandPalette.tsx`), built from the same data as the pages, so new projects appear automatically.
+- "now.md" card in the hero.
+
+## Where content lives
+- Profile, bio, experience, skills, education, "now": `src/content/site.ts`
+- Projects/clones: `src/content/projects.ts`. Adding one object creates its card, `/projects/<slug>` page, filter entry and ⌘K entry. No other file needs touching.
+
+## Conventions
+- Keep content in `src/content/*`, not hardcoded in components.
+- Do not publish her phone number on the site (it's only inside the resume PDF).
+- Run `npm run lint && npm run build` before finishing changes.
+
+## Known TODOs / ideas
+- Replace the "reading" and "learning" lines in `now` if inaccurate.
+- Add more projects/clones as she builds them.
+- Deploy (Vercel or GitHub Pages) and add a remote repo under github.com/neha-naaz.
+- Related project (separate repo): Tripflow / GoTrip-AI at `~/personalProjects/GoTrip-AI`, which is listed as a project here.
