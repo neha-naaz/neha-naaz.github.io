@@ -80,8 +80,6 @@ export default function CommandPalette({ items }: { items: PaletteItem[] }) {
     }
   };
 
-  let lastGroup = "";
-
   return (
     <>
       <button
@@ -125,8 +123,7 @@ export default function CommandPalette({ items }: { items: PaletteItem[] }) {
             <ul className="max-h-80 overflow-y-auto p-2">
               {results.length === 0 && <li className="px-3 py-6 text-center text-sm text-muted">No results</li>}
               {results.map((item, i) => {
-                const showGroup = item.group !== lastGroup;
-                lastGroup = item.group;
+                const showGroup = i === 0 || results[i - 1].group !== item.group;
                 return (
                   <li key={item.id}>
                     {showGroup && (
