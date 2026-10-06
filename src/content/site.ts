@@ -1,34 +1,32 @@
 /**
  * ─────────────────────────────────────────────────────────────
  *  EDIT THIS FILE to change what the site says about you.
- *  Everything marked TODO(resume) is placeholder until it is
- *  filled in from your resume.
  * ─────────────────────────────────────────────────────────────
  */
 
 export const profile = {
   name: "Neha Naazneen",
-  role: "Software Engineer",
-  // TODO(resume): one-line pitch
-  tagline: "I build reliable software and turn rough ideas into things people actually use.",
-  // TODO(resume): short bio paragraphs
+  role: "Java Software Engineer",
+  tagline:
+    "I design Spring Boot services and distributed, event-driven systems, and keep them reliable in production.",
   about: [
-    "I'm a software engineer who likes the whole loop: understanding the problem, designing the system, shipping it, and living with it in production.",
-    "Outside of work I build side projects and clones of products I admire, because the fastest way to understand how something works is to rebuild it.",
+    "I'm a backend engineer at AutoRABIT, working on CodeScan, a multi-tenant static analysis product for Salesforce. I own Java 17 / Spring Boot services and REST APIs, and I care a lot about what happens when things fail: idempotency, retries, and recovery.",
+    "Most recently I led AI CodeFix, an asynchronous workflow between Java services and Python workers on AWS (SQS, ECS Fargate, S3) for hours-long jobs. I'm on the on-call rotation, review code, and mentor six junior engineers.",
+    "Outside work I build side projects and clones of products I admire, because the fastest way to understand how something works is to rebuild it.",
   ],
-  location: "India", // TODO(resume)
-  email: "hello@example.com", // TODO(resume)
+  location: "Hyderabad, India",
+  email: "nehanaazneen17@gmail.com",
   availability: "Open to interesting conversations",
   socials: [
-    { label: "GitHub", href: "https://github.com/" }, // TODO(resume)
-    { label: "LinkedIn", href: "https://linkedin.com/" }, // TODO(resume)
+    { label: "GitHub", href: "https://github.com/neha-naaz" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/neha-naazneen2026/" },
   ],
-  resumeUrl: "/resume.pdf", // drop your PDF at public/resume.pdf
+  resumeUrl: "/resume.pdf",
 };
 
 /** The "Now" card: what you're up to these days. */
 export const now = {
-  building: "This portfolio, plus a few product clones",
+  building: "Tripflow (GoTrip AI) and this portfolio",
   learning: "Distributed systems & system design",
   reading: "Designing Data-Intensive Applications",
 };
@@ -44,41 +42,70 @@ export type Release = {
   changes: { type: ChangeType; text: string }[];
 };
 
-// TODO(resume): replace with real experience. Newest first.
 export const releases: Release[] = [
   {
     version: "v2.0.0",
-    company: "Company Name",
+    company: "AutoRABIT (CodeScan)",
     title: "Software Engineer",
-    period: "2023 – Present",
-    summary: "Short line about the team / product you work on.",
+    period: "Jul 2024 – Present",
+    summary: "Multi-tenant enterprise code-quality product: 700+ rules across 4 Salesforce code and metadata types.",
     changes: [
-      { type: "shipped", text: "A feature or service you built, with the outcome (numbers help)." },
-      { type: "improved", text: "Something you made faster, cheaper, or more reliable." },
-      { type: "fixed", text: "A hard bug or incident you tracked down and resolved." },
+      {
+        type: "shipped",
+        text: "AI CodeFix: an event-driven workflow between Java/Spring services and Python workers on AWS SQS, ECS Fargate and S3, with job-state sync, credit and billing gates, secure callbacks and failure recovery for hours-long workloads.",
+      },
+      {
+        type: "shipped",
+        text: "Java 17 / Spring Boot services and REST APIs with transactional data access via Hibernate, JDBC and PostgreSQL.",
+      },
+      {
+        type: "improved",
+        text: "Engineering quality through design and code reviews, and by mentoring 6 junior engineers on service boundaries, data models and transactional consistency.",
+      },
+      {
+        type: "improved",
+        text: "Defined REST contracts, async UI states and error handling with React/TypeScript, product and QA teammates.",
+      },
+      {
+        type: "fixed",
+        text: "Own production support on a formal on-call rotation: diagnosing cross-service failures from telemetry and logs, root-cause analysis, and shipping fixes.",
+      },
     ],
   },
   {
     version: "v1.0.0",
-    company: "Previous Company",
-    title: "Associate Software Engineer",
-    period: "2021 – 2023",
+    company: "AutoRABIT (CodeScan)",
+    title: "Junior Software Engineer",
+    period: "Apr 2023 – Jul 2024",
     changes: [
-      { type: "shipped", text: "First big thing you delivered." },
-      { type: "improved", text: "Process or performance improvement." },
+      {
+        type: "improved",
+        text: "Redesigned concurrency-sensitive analysis and reporting pipelines with retryable, idempotent processing, cutting workflow failures by ~35% at peak load.",
+      },
+      {
+        type: "shipped",
+        text: "Scheduled async workloads for usage reporting and license monitoring, with distributed locking, idempotency, retries and partial-failure recovery.",
+      },
+      {
+        type: "improved",
+        text: "Raised automated test coverage to ~80% with JUnit and Mockito; shipped via Git, Maven, Jenkins CI/CD and Docker.",
+      },
     ],
   },
 ];
 
-// TODO(resume): skills grouped like a package.json
 export const skills: Record<string, string[]> = {
-  languages: ["Java", "TypeScript", "Python", "SQL"],
-  frameworks: ["Spring Boot", "React", "Next.js", "Node.js"],
-  data: ["PostgreSQL", "MySQL", "Redis"],
-  tooling: ["Docker", "AWS", "Git", "CI/CD"],
+  languages: ["Java 17", "Python", "SQL", "TypeScript", "C++"],
+  backend: ["Spring Boot", "Spring Security", "Spring Data JPA", "Hibernate", "REST", "Microservices"],
+  data: ["PostgreSQL", "AWS SQS", "Redis/Jesque", "Event-driven", "Idempotency"],
+  cloud: ["AWS", "ECS Fargate", "S3", "Docker", "Jenkins", "Linux"],
+  testing: ["JUnit", "Mockito", "Integration tests", "On-call", "RCA"],
 };
 
-// TODO(resume): education
 export const education = [
-  { school: "University Name", degree: "B.Tech, Computer Science", period: "2017 – 2021" },
+  {
+    school: "Jawaharlal Nehru Technological University, Hyderabad",
+    degree: "B.Tech, CSE (AI & ML)",
+    period: "2020 – 2024 · CGPA 8.5",
+  },
 ];

@@ -24,32 +24,31 @@ export type Project = {
   links?: { repo?: string; demo?: string };
 };
 
-// TODO: replace these samples with your real projects.
 export const projects: Project[] = [
   {
-    slug: "gotrip-ai",
-    title: "GoTrip AI",
+    slug: "tripflow",
+    title: "Tripflow (GoTrip AI)",
     kind: "original",
     status: "building",
     year: 2026,
-    summary: "An AI-assisted trip planner. Placeholder description until you fill it in.",
+    summary: "A group-travel marketplace: agencies publish trips, travelers book with a deposit, and confirmed members join a trip group chat.",
     description: [
-      "Describe the problem, who it's for, and why you built it.",
-      "Then describe the interesting engineering decisions you made along the way.",
+      "Agencies create and publish trips; travelers book a seat, pay a deposit, and once confirmed are added to a group chat for that trip.",
+      "It's a modular monolith with clear module boundaries (auth, agency, trip, booking, payment, group, chat), which keeps the domain clean without the overhead of microservices.",
     ],
-    highlights: ["Something technically interesting", "Something you learned", "A trade-off you made"],
-    stack: ["TypeScript", "React", "Node.js"],
+    highlights: [
+      "Seat holds and a booking → payment → confirmed → group membership flow",
+      "Webhook-driven payment confirmation",
+      "Real-time group chat over STOMP WebSocket",
+      "Integration tests against embedded Postgres",
+    ],
+    stack: ["Java 21", "Spring Boot", "PostgreSQL", "Flyway", "JWT", "WebSocket", "React", "TypeScript", "Docker"],
     featured: true,
+    links: { repo: "https://github.com/neha-naaz/GoTrip-AI" },
   },
-  {
-    slug: "example-clone",
-    title: "Example Clone",
-    kind: "clone",
-    cloneOf: "Some Popular App",
-    status: "idea",
-    year: 2026,
-    summary: "A placeholder for the first clone you build. Delete or replace me.",
-    stack: ["Next.js", "Tailwind", "PostgreSQL"],
-    featured: true,
-  },
+  // Add your next project or clone here. Example:
+  // {
+  //   slug: "spotify-clone", title: "Spotify Clone", kind: "clone", cloneOf: "Spotify",
+  //   status: "idea", year: 2026, summary: "…", stack: ["Next.js"], featured: true,
+  // },
 ];
