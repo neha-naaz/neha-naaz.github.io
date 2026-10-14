@@ -12,8 +12,13 @@ export default function Hero() {
         <h1 className="font-serif text-5xl font-medium leading-[1.05] tracking-tight sm:text-7xl">
           Hi, I&rsquo;m {profile.name.split(" ")[0]}.
           <br />
-          <span className="italic text-accent">{profile.role}</span>
-          <span className="caret ml-2" aria-hidden />
+          <span className="italic text-accent">{profile.role.split(" ")[0]}</span>
+          <br />
+          {/* last word + caret in one nowrap span so the caret never drops to its own line */}
+          <span className="whitespace-nowrap">
+            <span className="italic text-accent">{profile.role.split(" ").slice(1).join(" ")}</span>
+            <span className="caret ml-2" aria-hidden />
+          </span>
         </h1>
         <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">{profile.tagline}</p>
         <div className="mt-8 flex flex-wrap gap-3 font-mono text-sm">

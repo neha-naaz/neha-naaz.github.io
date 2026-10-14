@@ -6,11 +6,11 @@
 
 export const profile = {
   name: "Neha Naazneen",
-  role: "Java Software Engineer",
+  role: "Software Engineer",
   tagline:
     "I design Spring Boot services and distributed, event-driven systems, and keep them reliable in production.",
   about: [
-    "I'm a backend engineer at AutoRABIT, working on CodeScan, a multi-tenant static analysis product for Salesforce. I own Java 17 / Spring Boot services and REST APIs, and I care a lot about what happens when things fail: idempotency, retries, and recovery.",
+    "I'm a backend engineer with 3+ years at AutoRABIT, working on CodeScan, a multi-tenant static analysis product for Salesforce. I own Java 17 / Spring Boot services and REST APIs, and I care a lot about what happens when things fail: idempotency, retries, and recovery.",
     "Most recently I led AI CodeFix, an asynchronous workflow between Java services and Python workers on AWS (SQS, ECS Fargate, S3) for hours-long jobs. I'm on the on-call rotation, review code, and mentor six junior engineers.",
     "Outside work I build side projects and clones of products I admire, because the fastest way to understand how something works is to rebuild it.",
   ],
@@ -23,6 +23,14 @@ export const profile = {
   ],
   resumeUrl: "/resume.pdf",
 };
+
+/** "By the numbers" strip under the hero. Every figure comes from the resume. */
+export const highlights = [
+  { value: "~35%", label: "fewer workflow failures", detail: "idempotent, retryable pipelines under peak load" },
+  { value: "700+", label: "quality & security rules", detail: "across 4 Salesforce code and metadata types" },
+  { value: "~80%", label: "automated test coverage", detail: "JUnit + Mockito, shipped via Jenkins CI/CD" },
+  { value: "6", label: "engineers mentored", detail: "code reviews, design talks, production debugging" },
+];
 
 /** The "Now" card: what you're up to these days. */
 export const now = {
@@ -56,7 +64,15 @@ export const releases: Release[] = [
       },
       {
         type: "shipped",
+        text: "AuthHub integration with internal and external services: organization discovery, credential registration, token brokerage, caching and refresh over OAuth-secured REST APIs and JWT-based service-to-service communication.",
+      },
+      {
+        type: "shipped",
         text: "Java 17 / Spring Boot services and REST APIs with transactional data access via Hibernate, JDBC and PostgreSQL.",
+      },
+      {
+        type: "improved",
+        text: "Own deployment and monitoring of AWS-hosted services through Docker and Jenkins CI/CD, with Grafana and the ELK Stack for observability.",
       },
       {
         type: "improved",
@@ -84,7 +100,7 @@ export const releases: Release[] = [
       },
       {
         type: "shipped",
-        text: "Scheduled async workloads for usage reporting and license monitoring, with distributed locking, idempotency, retries and partial-failure recovery.",
+        text: "Scheduled async workloads for usage reporting and license monitoring, with 4 reliability controls: locking, idempotency, retries and partial-failure recovery.",
       },
       {
         type: "improved",
@@ -95,11 +111,13 @@ export const releases: Release[] = [
 ];
 
 export const skills: Record<string, string[]> = {
-  languages: ["Java 17", "Python", "SQL", "TypeScript", "C++"],
-  backend: ["Spring Boot", "Spring Security", "Spring Data JPA", "Hibernate", "REST", "Microservices"],
-  data: ["PostgreSQL", "AWS SQS", "Redis/Jesque", "Event-driven", "Idempotency"],
-  cloud: ["AWS", "ECS Fargate", "S3", "Docker", "Jenkins", "Linux"],
-  testing: ["JUnit", "Mockito", "Integration tests", "On-call", "RCA"],
+  languages: ["Java 17", "Python", "Kotlin", "SQL", "C++", "JavaScript/TypeScript"],
+  backend: ["Spring Boot", "Spring MVC", "Spring Security", "REST APIs", "SOAP", "Microservices", "API Design"],
+  coreJava: ["Collections", "Streams", "Lambdas", "Concurrency", "Multithreading", "Design Patterns"],
+  async: ["AWS SQS", "Redis/Jesque", "Idempotency", "Retry & Recovery"],
+  database: ["PostgreSQL", "Spring Data JPA", "Hibernate", "JDBC", "Data Modeling"],
+  cloud: ["AWS", "ECS Fargate", "S3", "Docker", "Jenkins CI/CD", "Git/GitLab", "Maven", "Linux"],
+  observability: ["Grafana", "ELK Stack", "JUnit", "Mockito", "Integration Testing", "On-Call", "RCA"],
 };
 
 export const education = [

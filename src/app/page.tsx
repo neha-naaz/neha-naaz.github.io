@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { projects } from "@/content/projects";
 import Hero from "@/components/Hero";
+import Highlights from "@/components/Highlights";
 import About from "@/components/About";
 import Changelog from "@/components/Changelog";
 import Contact from "@/components/Contact";
@@ -13,6 +14,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <Highlights />
       <About />
       <Changelog />
       <Section

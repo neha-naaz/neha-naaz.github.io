@@ -36,7 +36,7 @@ export default function Header() {
     <header className="sticky top-0 z-30 border-b border-line/70 bg-paper/80 backdrop-blur">
       <div className="mx-auto flex h-14 w-full max-w-5xl items-center justify-between px-6">
         <Link href="/" className="font-serif text-xl font-semibold tracking-tight">
-          {profile.name.split(" ")[0]}
+          {profile.name}
           <span className="text-accent">.</span>
         </Link>
         <nav className="hidden items-center gap-6 font-mono text-xs uppercase tracking-wider text-muted sm:flex">

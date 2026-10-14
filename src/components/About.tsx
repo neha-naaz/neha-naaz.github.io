@@ -24,32 +24,45 @@ export default function About() {
           </div>
         </div>
 
-        <pre className="overflow-x-auto rounded-xl border border-line bg-card p-5 font-mono text-[13px] leading-6">
-          <code>
-            <span className="text-muted">{"{"}</span>
-            {"\n"}
-            {"  "}
-            <span className="text-accent">&quot;name&quot;</span>: <span>&quot;{profile.name.toLowerCase().replace(" ", "-")}&quot;</span>,{"\n"}
-            {"  "}
-            <span className="text-accent">&quot;dependencies&quot;</span>: {"{"}
-            {"\n"}
-            {Object.entries(skills).map(([group, list], gi, arr) => (
-              <span key={group}>
-                {"    "}
-                <span className="text-accent">&quot;{group}&quot;</span>: [{list.map((s, i) => (
-                  <span key={s}>
-                    &quot;{s}&quot;{i < list.length - 1 ? ", " : ""}
-                  </span>
-                ))}]{gi < arr.length - 1 ? "," : ""}
-                {"\n"}
-              </span>
+        <div className="self-start overflow-hidden rounded-xl border border-line bg-card font-mono text-[13px]">
+          {/* window title bar */}
+          <div className="flex items-center gap-2 border-b border-line px-4 py-2.5">
+            <span className="h-2.5 w-2.5 rounded-full bg-accent" />
+            <span className="h-2.5 w-2.5 rounded-full bg-line" />
+            <span className="h-2.5 w-2.5 rounded-full bg-line" />
+            <span className="ml-2 text-xs text-muted">package.json</span>
+          </div>
+
+          <div className="space-y-3 p-5 leading-6">
+            <div className="text-muted">{"{"}</div>
+            <div className="pl-4">
+              <span className="text-accent">&quot;name&quot;</span>: &quot;
+              {profile.name.toLowerCase().replace(" ", "-")}&quot;,
+            </div>
+            <div className="pl-4">
+              <span className="text-accent">&quot;dependencies&quot;</span>: {"{"}
+            </div>
+
+            {Object.entries(skills).map(([group, list]) => (
+              <div key={group} className="pl-8">
+                <div className="text-accent">&quot;{group}&quot;:</div>
+                <ul className="mt-1.5 flex flex-wrap gap-1.5">
+                  {list.map((s) => (
+                    <li
+                      key={s}
+                      className="rounded-md border border-line bg-paper px-2 py-0.5 text-xs transition-colors hover:border-accent hover:text-accent"
+                    >
+                      {s}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
-            {"  "}
-            {"}"}
-            {"\n"}
-            <span className="text-muted">{"}"}</span>
-          </code>
-        </pre>
+
+            <div className="pl-4">{"}"}</div>
+            <div className="text-muted">{"}"}</div>
+          </div>
+        </div>
       </div>
     </Section>
   );
