@@ -21,7 +21,8 @@ export const profile = {
     { label: "GitHub", href: "https://github.com/neha-naaz" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/neha-naazneen2026/" },
   ],
-  resumeUrl: "/resume.pdf",
+  // Plain <a> tags don't add the GitHub Pages base path automatically, so we add it here.
+  resumeUrl: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/resume.pdf`,
 };
 
 /** "By the numbers" strip under the hero. Every figure comes from the resume. */
